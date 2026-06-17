@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ChunkBakeSettings" format=3 uid="uid://dvjwh1fofdw01"]
+
+[ext_resource type="Resource" uid="uid://de6elv8oejlc5" path="res://addons/chunk_loader/tests/resources/chunk_settings.tres" id="1_1caq6"]
+[ext_resource type="Script" uid="uid://tfbfsul75qm5" path="res://addons/chunk_loader/baker/chunk_bake_settings.gd" id="1_usy4l"]
+
+[resource]
+script = ExtResource("1_usy4l")
+chunk_settings = ExtResource("1_1caq6")
+tile_layers_root = NodePath("../TileLayersRoot")
+world_objects_root = NodePath("../WorldObjectsRoot")
+metadata/_custom_type_script = "uid://tfbfsul75qm5"

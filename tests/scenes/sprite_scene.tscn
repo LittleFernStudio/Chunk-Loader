@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cnqnv6n6i0d2y"]
+
+[ext_resource type="Texture2D" uid="uid://buxl6b8rmdtt0" path="res://addons/chunk_loader/tests/sprites/tree.png" id="1_o1nqr"]
+
+[node name="SpriteScene" type="Sprite2D" unique_id=1836992349]
+texture = ExtResource("1_o1nqr")

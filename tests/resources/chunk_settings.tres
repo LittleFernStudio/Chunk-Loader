@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ChunkSettings" format=3 uid="uid://de6elv8oejlc5"]
+
+[ext_resource type="Script" uid="uid://bsx5nvoj4h7bx" path="res://addons/chunk_loader/resources/chunk_settings.gd" id="1_5d8r2"]
+
+[resource]
+script = ExtResource("1_5d8r2")
+metadata/_custom_type_script = "uid://bsx5nvoj4h7bx"

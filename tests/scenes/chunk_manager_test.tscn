@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dmc4303p5ianu"]
+
+[ext_resource type="Script" uid="uid://cv3bqnsus3ap2" path="res://addons/chunk_loader/runtime/chunk_manager.gd" id="1_ruh4m"]
+[ext_resource type="Resource" uid="uid://ckd0mnt7lsy8w" path="res://addons/chunk_loader/chunk_settings.tres" id="2_7b21s"]
+[ext_resource type="Script" uid="uid://flvfq8rxl655" path="res://addons/chunk_loader/tests/scripts/chunk_manager_test_runner.gd" id="4_mlxhk"]
+[ext_resource type="Script" uid="uid://cmltayxygs518" path="res://addons/chunk_loader/events/chunk_event_bus.gd" id="4_ne660"]
+[ext_resource type="PackedScene" uid="uid://drpb51qi0maxf" path="res://addons/chunk_loader/tests/scenes/viewer.tscn" id="5_ne660"]
+[ext_resource type="PackedScene" uid="uid://dkvo0lo46u538" path="res://addons/chunk_loader/tests/scenes/camera_2d.tscn" id="6_v4f1k"]
+
+[node name="ChunkManagerTest" type="Node2D" unique_id=2040421926]
+
+[node name="ChunkManagerTestRunner" type="Node" parent="." unique_id=1983804198 node_paths=PackedStringArray("chunk_manager")]
+script = ExtResource("4_mlxhk")
+chunk_manager = NodePath("../ChunkManager")
+
+[node name="ChunkManager" type="Node" parent="." unique_id=1446623114 node_paths=PackedStringArray("chunk_event_bus", "viewer")]
+script = ExtResource("1_ruh4m")
+chunk_settings = ExtResource("2_7b21s")
+chunk_event_bus = NodePath("../ChunkEventBus")
+viewer = NodePath("../Viewer")
+metadata/_custom_type_script = "uid://cv3bqnsus3ap2"
+
+[node name="ChunkEventBus" type="Node" parent="." unique_id=348390919]
+script = ExtResource("4_ne660")
+metadata/_custom_type_script = "uid://cmltayxygs518"
+
+[node name="Viewer" parent="." unique_id=2040016157 instance=ExtResource("5_ne660")]
+
+[node name="Camera2D" parent="." unique_id=1474905783 node_paths=PackedStringArray("target") instance=ExtResource("6_v4f1k")]
+target = NodePath("../Viewer")

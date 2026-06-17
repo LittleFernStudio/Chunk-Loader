@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dkvo0lo46u538"]
+
+[ext_resource type="Script" uid="uid://b3845kn5j00a0" path="res://addons/chunk_loader/tests/scripts/follow_camera.gd" id="1_02633"]
+
+[node name="Camera2D" type="Camera2D" unique_id=1474905783 node_paths=PackedStringArray("target")]
+script = ExtResource("1_02633")
+target = NodePath("")
