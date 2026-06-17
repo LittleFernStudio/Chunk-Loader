@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ba2gxlijrd4p8"]
+
+[ext_resource type="Script" uid="uid://do0dg1os41n2a" path="res://addons/chunk_loader/runtime/chunk_registry.gd" id="1_ym4g0"]
+[ext_resource type="Script" uid="uid://debaaw8stmw7s" path="res://addons/chunk_loader/tests/scripts/chunk_registry_test_runner.gd" id="2_7omk4"]
+
+[node name="ChunkRegistryTest" type="Node2D" unique_id=821752423]
+
+[node name="ChunkRegistry" type="Node" parent="." unique_id=2143685553]
+script = ExtResource("1_ym4g0")
+metadata/_custom_type_script = "uid://do0dg1os41n2a"
+
+[node name="ChunkRegistryTestRunner" type="Node" parent="." unique_id=1001610267 node_paths=PackedStringArray("chunk_registry")]
+script = ExtResource("2_7omk4")
+chunk_registry = NodePath("../ChunkRegistry")

@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://3nks6dy2jqdx"]
+
+[ext_resource type="Script" uid="uid://hfhivl42s51x" path="res://addons/chunk_loader/runtime/chunk_runtime_world.gd" id="1_f5fq5"]
+[ext_resource type="Script" uid="uid://cmltayxygs518" path="res://addons/chunk_loader/events/chunk_event_bus.gd" id="1_hqj2q"]
+[ext_resource type="Script" uid="uid://2rrkugxhy507" path="res://addons/chunk_loader/runtime/chunk_database.gd" id="2_s2g73"]
+[ext_resource type="Script" uid="uid://do0dg1os41n2a" path="res://addons/chunk_loader/runtime/chunk_registry.gd" id="3_0t6hy"]
+[ext_resource type="Texture2D" uid="uid://btuw1nnujlfvg" path="res://addons/chunk_loader/tests/sprites/tileset.png" id="3_202ro"]
+[ext_resource type="Resource" uid="uid://dixm36xajn2m0" path="res://addons/chunk_loader/chunks/chunk_manifest.tres" id="3_s2g73"]
+[ext_resource type="Script" uid="uid://cv3bqnsus3ap2" path="res://addons/chunk_loader/runtime/chunk_manager.gd" id="4_mc5uk"]
+[ext_resource type="Resource" uid="uid://ckd0mnt7lsy8w" path="res://addons/chunk_loader/chunk_settings.tres" id="5_f5fq5"]
+[ext_resource type="Script" uid="uid://bsxxsl7xglo5q" path="res://addons/chunk_loader/runtime/chunk_streaming_system.gd" id="6_d7peu"]
+[ext_resource type="Script" uid="uid://ejt5dx4fpg5d" path="res://addons/chunk_loader/runtime/scene_streaming_system.gd" id="7_mm5wf"]
+[ext_resource type="Script" uid="uid://68h4raljx4h2" path="res://addons/chunk_loader/tests/scripts/chunk_event_bus_test_runner.gd" id="8_jyn85"]
+[ext_resource type="Script" uid="uid://cec4feoo117ie" path="res://addons/chunk_loader/runtime/chunk_debug_overlay.gd" id="9_tmrp6"]
+[ext_resource type="Script" uid="uid://yg5ega8en8l8" path="res://addons/chunk_loader/runtime/tile_streaming_system.gd" id="11_mc5uk"]
+[ext_resource type="PackedScene" uid="uid://drpb51qi0maxf" path="res://addons/chunk_loader/tests/scenes/viewer.tscn" id="14_tmrp6"]
+[ext_resource type="PackedScene" uid="uid://dkvo0lo46u538" path="res://addons/chunk_loader/tests/scenes/camera_2d.tscn" id="15_lnp86"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_12kxd"]
+texture = ExtResource("3_202ro")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/terrains_peering_bit/right_side = 0
+3:2/0/terrains_peering_bit/bottom_right_corner = 0
+3:2/0/terrains_peering_bit/bottom_side = 0
+3:2/0/terrains_peering_bit/bottom_left_corner = 0
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_left_corner = 0
+3:2/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/terrains_peering_bit/right_side = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0/terrains_peering_bit/left_side = 0
+3:1/0/terrains_peering_bit/top_left_corner = 0
+3:1/0/terrains_peering_bit/top_side = 0
+3:1/0/terrains_peering_bit/top_right_corner = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/terrains_peering_bit/right_side = 0
+4:1/0/terrains_peering_bit/bottom_right_corner = 0
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/left_side = 0
+4:1/0/terrains_peering_bit/top_left_corner = 0
+4:1/0/terrains_peering_bit/top_side = 0
+4:1/0/terrains_peering_bit/top_right_corner = 0
+4:2/0 = 0
+4:2/0/terrain_set = 0
+4:2/0/terrain = 0
+4:2/0/terrains_peering_bit/right_side = 0
+4:2/0/terrains_peering_bit/bottom_right_corner = 0
+4:2/0/terrains_peering_bit/bottom_side = 0
+4:2/0/terrains_peering_bit/bottom_left_corner = 0
+4:2/0/terrains_peering_bit/left_side = 0
+4:2/0/terrains_peering_bit/top_side = 0
+4:2/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_ypha4"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain"
+terrain_set_0/terrain_0/color = Color(0.70729786, 3.85046e-07, 0.3453863, 1)
+sources/0 = SubResource("TileSetAtlasSource_12kxd")
+
+[node name="ChunkRuntimeWorld" type="Node2D" unique_id=1598117100 node_paths=PackedStringArray("chunk_event_bus", "chunk_database", "chunk_registry", "chunk_manager", "chunk_streaming_system", "scene_streaming_system", "tile_streaming_system", "chunk_debug_overlay")]
+script = ExtResource("1_f5fq5")
+chunk_event_bus = NodePath("ChunkEventBus")
+chunk_database = NodePath("ChunkDatabase")
+chunk_registry = NodePath("ChunkRegistry")
+chunk_manager = NodePath("ChunkManager")
+chunk_streaming_system = NodePath("ChunkStreamingSystem")
+scene_streaming_system = NodePath("SceneStreamingSystem")
+tile_streaming_system = NodePath("TileStreamingSystem")
+chunk_debug_overlay = NodePath("ChunkDebugOverlay")
+
+[node name="WorldObjects" type="Node" parent="." unique_id=1454310933]
+
+[node name="RuntimeTileLayers" type="Node2D" parent="." unique_id=395977767]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="RuntimeTileLayers" unique_id=1166723001]
+tile_set = SubResource("TileSet_ypha4")
+
+[node name="ChunkEventBus" type="Node" parent="." unique_id=17000252]
+script = ExtResource("1_hqj2q")
+metadata/_custom_type_script = "uid://cmltayxygs518"
+
+[node name="ChunkDatabase" type="Node" parent="." unique_id=819171014]
+script = ExtResource("2_s2g73")
+manifest = ExtResource("3_s2g73")
+metadata/_custom_type_script = "uid://2rrkugxhy507"
+
+[node name="ChunkRegistry" type="Node" parent="." unique_id=1199253309]
+script = ExtResource("3_0t6hy")
+metadata/_custom_type_script = "uid://do0dg1os41n2a"
+
+[node name="ChunkManager" type="Node" parent="." unique_id=359679363 node_paths=PackedStringArray("chunk_event_bus", "viewer")]
+script = ExtResource("4_mc5uk")
+chunk_settings = ExtResource("5_f5fq5")
+chunk_event_bus = NodePath("../ChunkEventBus")
+viewer = NodePath("../Viewer")
+metadata/_custom_type_script = "uid://cv3bqnsus3ap2"
+
+[node name="ChunkStreamingSystem" type="Node" parent="." unique_id=871163775 node_paths=PackedStringArray("chunk_event_bus", "chunk_registry", "chunk_database")]
+script = ExtResource("6_d7peu")
+chunk_event_bus = NodePath("../ChunkEventBus")
+chunk_registry = NodePath("../ChunkRegistry")
+chunk_database = NodePath("../ChunkDatabase")
+metadata/_custom_type_script = "uid://bsxxsl7xglo5q"
+
+[node name="SceneStreamingSystem" type="Node" parent="." unique_id=143338072 node_paths=PackedStringArray("chunk_streaming_system", "chunk_event_bus", "streamed_content_root")]
+script = ExtResource("7_mm5wf")
+chunk_streaming_system = NodePath("../ChunkStreamingSystem")
+chunk_event_bus = NodePath("../ChunkEventBus")
+chunk_settings = ExtResource("5_f5fq5")
+streamed_content_root = NodePath("../WorldObjects")
+metadata/_custom_type_script = "uid://ejt5dx4fpg5d"
+
+[node name="TileStreamingSystem" type="Node" parent="." unique_id=870065978 node_paths=PackedStringArray("chunk_event_bus", "tile_layers_root")]
+script = ExtResource("11_mc5uk")
+chunk_event_bus = NodePath("../ChunkEventBus")
+tile_layers_root = NodePath("../RuntimeTileLayers")
+chunk_settings = ExtResource("5_f5fq5")
+metadata/_custom_type_script = "uid://yg5ega8en8l8"
+
+[node name="ChunkEventBusTestRunner" type="Node" parent="." unique_id=447867277 node_paths=PackedStringArray("chunk_event_bus", "chunk_streaming_system")]
+script = ExtResource("8_jyn85")
+chunk_event_bus = NodePath("../ChunkEventBus")
+chunk_streaming_system = NodePath("../ChunkStreamingSystem")
+
+[node name="ChunkDebugOverlay" type="Node2D" parent="." unique_id=630955258 node_paths=PackedStringArray("chunk_manager", "chunk_streaming_system")]
+script = ExtResource("9_tmrp6")
+chunk_manager = NodePath("../ChunkManager")
+chunk_streaming_system = NodePath("../ChunkStreamingSystem")
+chunk_settings = ExtResource("5_f5fq5")
+metadata/_custom_type_script = "uid://cec4feoo117ie"
+
+[node name="Viewer" parent="." unique_id=2040016157 instance=ExtResource("14_tmrp6")]
+
+[node name="Camera2D" parent="." unique_id=1474905783 node_paths=PackedStringArray("target") instance=ExtResource("15_lnp86")]
+target = NodePath("../Viewer")
