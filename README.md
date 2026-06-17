@@ -25,3 +25,8 @@ Each chunk contains references to scene resources representing world objects suc
 When a chunk becomes active, the associated scene resources are instantiated and added to the world. When the chunk is unloaded, those instances are automatically removed.
 
 Because objects are stored as resource references rather than permanently existing in the scene tree, thousands of potential world objects can be managed while only a small subset remains active at any given time.
+
+#### Subtree Pull
+```
+ git subtree pull --prefix=addons/chunk_loader https://github.com/LittleFernStudio/chunk_loader.git main --squash
+```
